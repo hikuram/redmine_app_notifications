@@ -34,7 +34,7 @@ class AppNotificationsController < ApplicationController
   def view
     @notification = AppNotification.find(params[:id])
     if @notification.recipient == User.current 
-      AppNotification.update(@notification, :viewed => true)
+      AppNotification.update(@notification.id, :viewed => true)
       if request.xhr?
         if @notification.is_edited?
           render :partial => 'issues/issue_edit', :formats => [:html], :locals => { :notification => @notification, :journal => @notification.journal }
