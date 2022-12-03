@@ -31,7 +31,7 @@ Redmine::Plugin.register :redmine_app_notifications do
     }, :partial => 'settings/app_notifications_settings'
 end
 
-require_dependency 'app_notifications_hook_listener'
-require_dependency 'app_notifications_account_patch'
-require_dependency 'app_notifications_issues_patch'
-require_dependency 'app_notifications_journals_patch'
+require File.expand_path('../lib/app_notifications_hook_listener', __FILE__)
+require File.expand_path('../lib/app_notifications_account_patch', __FILE__)
+require File.expand_path('../lib/app_notifications_issues_patch', __FILE__)
+require File.expand_path('../lib/app_notifications_journals_patch', __FILE__)
